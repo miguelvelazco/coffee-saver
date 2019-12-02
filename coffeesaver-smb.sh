@@ -6,6 +6,5 @@ for i in $(cat livehost.txt);
 do
   echo -e "running ms smb check on $i"
   smbchecker="${i}-smb-ms-check"
-  nmap --script smb-vuln-ms* $i | tee $smbchecker.txt
+  nmap --script smb-vuln-ms* -vvv $i | tee $smbchecker.txt
 done
-

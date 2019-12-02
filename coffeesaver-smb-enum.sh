@@ -5,6 +5,6 @@ cat $2.txt | grep "Up" | cut -d " " -f2 > livehost.txt
 for i in $(cat livehost.txt);
 do
   echo -e "running smb-enum on $i"
-  going="${i}-smn-enum"
+  going="${i}-smb-enum"
     nmap --script smb-enum* -vvv -p 445,139 $i > $going.txt
 done
